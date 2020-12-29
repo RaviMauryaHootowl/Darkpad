@@ -1,0 +1,84 @@
+:root{
+  --textBg: #1F1F1F;
+  --menuBg: #111111;
+  --textColor: white;
+  --accent: #823FEF;
+}
+
+.typeAreaContainer{
+  width: 100%;
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.textAreaBox{
+  background-color: var(--textBg);
+  flex: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.5rem 0.3rem;
+}
+
+::-webkit-scrollbar {
+  width: 15px!important
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:rgba(0, 0, 0, 0.3);
+  cursor: pointer !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15)
+}
+
+.optionBtn{
+  border: none;
+  outline: none;
+  padding: 0.4rem 0.8rem;
+  margin-left: 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.optionBtn:disabled{
+  background-color: rgb(19, 19, 19);
+  color: rgb(116, 116, 116);
+}
+
+.optionBtn:disabled:hover{
+  background-color: rgb(19, 19, 19);
+  box-shadow: none;
+}
+
+.bottomStatusBar{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.2rem;
+  background-color: var(--menuBg);
+  width: 100%;
+}
+
+.themeIcon, .openIcon, .saveIcon{
+  height: 1.2rem;
+  padding-right: 0.3rem;
+}
+
+.utfInfo{
+  color: rgb(151, 151, 151);
+  font-size: 0.9rem;
+  padding: 0rem 2rem;
+}
