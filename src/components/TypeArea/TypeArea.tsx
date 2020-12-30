@@ -24,6 +24,20 @@ const TypeArea = () => {
   const [isSaved, setIsSaved] = useState<boolean>(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState<boolean>(false);
 
+  // Add your theme here in same format
+  // Name it correctly
+  const themeMenuItems = [
+    {name: "Dark", action: () => {
+      return setThemeMenu("Dark")
+    }},
+    {name: "Monokai", action: () => {
+      return setThemeMenu("Monokai")
+    }},
+    {name: "Nightblue", action: () => {
+      return setThemeMenu("Nightblue")
+    }},
+  ]
+
   const bottomBarStyle: React.CSSProperties = {
     backgroundColor: `${themeMap[theme].menuBg}`
   }
@@ -36,6 +50,14 @@ const TypeArea = () => {
     color: `${themeMap[theme].textColor}`
   }
 
+  const setThemeMenu = (themeName : string) => {
+    if(setTheme){
+      setTheme(themeName)
+      store.set("theme", themeName);
+    }
+    toggleThemeMenu();
+    return true;
+  }
 
   useEffect(() => {
     if(remote.process.argv.length > 1){
@@ -100,32 +122,7 @@ const TypeArea = () => {
       
       <div style={bottomBarStyle} className={styles.bottomStatusBar}>
         <div>
-          <Menu menuData={[
-              {name: "Dark", action: () => {
-                if(setTheme){
-                  setTheme("Dark")
-                  store.set("theme", "Dark");
-                }
-                toggleThemeMenu();
-                return true;
-              }},
-              {name: "Monokai", action: () => {
-                if(setTheme){
-                  setTheme("Monokai")
-                  store.set("theme", "Monokai");
-                }
-                toggleThemeMenu();
-                return true;
-              }},
-              {name: "Nightblue", action: () => {
-                if(setTheme){
-                  setTheme("Nightblue")
-                  store.set("theme", "Nightblue");
-                }
-                toggleThemeMenu();
-                return true;
-              }}
-            ]} isMOpen={isThemeMenuOpen}/>
+          <Menu menuData={themeMenuItems} isMOpen={isThemeMenuOpen}/>
           <button style={optionBtnsStyles} onClick={toggleThemeMenu} className={styles.optionBtn}>
             <img className={styles.themeIcon} src={themeIcon} alt=""/>
             Themes

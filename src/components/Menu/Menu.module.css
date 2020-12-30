@@ -5,11 +5,13 @@
   position: absolute;
   bottom: 2.5rem;
   background-color: rgb(43, 43, 43);
-  box-shadow: rgba(0, 0, 0, 0.212) 1px 1px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 10px;
   z-index: 10;
   min-width: 10rem;
   border-radius: 4px;
-  overflow: hidden;
+  overflow-x: hidden;
+  max-height: 14rem;
+  overflow-y: auto;
 }
 
 .dropDownMenuItem{
@@ -19,5 +21,5 @@
 }
 
 .dropDownMenuItem:hover{
-  background-color:  rgb(63, 63, 63);
+  background-color:  rgba(173, 173, 173, 0.2);
 }
