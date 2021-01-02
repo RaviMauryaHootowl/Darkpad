@@ -36,6 +36,21 @@ const TypeArea = () => {
     {name: "Nightblue", action: () => {
       return setThemeMenu("Nightblue")
     }},
+    {name: "Light", action: () => {
+      return setThemeMenu("Light")
+    }},
+    {name: "Purplish", action: () => {
+      return setThemeMenu("Purplish")
+    }},
+    {name: "Dimmed", action: () => {
+      return setThemeMenu("Dimmed")
+    }},
+    {name: "Brown", action: () => {
+      return setThemeMenu("Brown")
+    }},
+    {name: "Reddish Red", action: () => {
+      return setThemeMenu("Reddish Red")
+    }}, 
   ]
 
   const bottomBarStyle: React.CSSProperties = {
